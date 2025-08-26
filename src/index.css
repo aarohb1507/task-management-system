@@ -8,6 +8,9 @@ body{
   color:#fff;
 }
 
+/* Set default bg color for inputs and textareas */
+
+
 #tasklist::-webkit-scrollbar{
   display: none;
 }
