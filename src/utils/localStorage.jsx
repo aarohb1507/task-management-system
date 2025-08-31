@@ -1,10 +1,12 @@
 const employees = [
   {
     "id": 1,
+    "firstName": "Aarav",
     "email": "employee1@example.com",
     "password": "123",
     "tasks": [
       {
+        "taskNumber": 1,
         "title": "Prepare Sales Report",
         "description": "Compile Q2 sales figures, highlight top regions, and add insights.",
         "taskDate": "2025-08-26",
@@ -15,6 +17,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 2,
         "title": "Client Kickoff Call",
         "description": "Lead the onboarding call for the Atlas Corp account.",
         "taskDate": "2025-08-27",
@@ -25,6 +28,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 3,
         "title": "Update CRM Records",
         "description": "Clean duplicates and tag high-value leads with proper stages.",
         "taskDate": "2025-08-22",
@@ -35,6 +39,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 4,
         "title": "Quarterly Forecast",
         "description": "Draft revenue forecast scenarios (base, best, worst).",
         "taskDate": "2025-08-28",
@@ -45,6 +50,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 5,
         "title": "Missed Follow-up",
         "description": "Failed to follow up with Beta Logistics within SLA.",
         "taskDate": "2025-08-18",
@@ -55,6 +61,7 @@ const employees = [
         "failedTask": true
       },
       {
+        "taskNumber": 6,
         "title": "Proposal Draft",
         "description": "Create pricing proposal for Neo Retail with tiered options.",
         "taskDate": "2025-08-24",
@@ -65,6 +72,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 7,
         "title": "Competitor Snapshot",
         "description": "Summarize two competitor launches this month.",
         "taskDate": "2025-08-25",
@@ -74,14 +82,22 @@ const employees = [
         "completedTask": true,
         "failedTask": false
       }
-    ]
+    ],
+    "taskCounts": {
+      "active": 2,
+      "new": 2,
+      "completed": 3,
+      "failed": 1
+    }
   },
   {
     "id": 2,
+    "firstName": "Ishaan",
     "email": "employee2@example.com",
     "password": "123",
     "tasks": [
       {
+        "taskNumber": 1,
         "title": "Code Review PR#482",
         "description": "Review authentication middleware and add comments.",
         "taskDate": "2025-08-26",
@@ -92,6 +108,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 2,
         "title": "Bugfix: Payment Retries",
         "description": "Fix double-charge edge case when gateway times out.",
         "taskDate": "2025-08-23",
@@ -102,6 +119,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 3,
         "title": "Refactor User Service",
         "description": "Extract user profile logic to a separate module with tests.",
         "taskDate": "2025-08-28",
@@ -112,6 +130,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 4,
         "title": "Missed SLA: Hotfix",
         "description": "Hotfix deployment delayed beyond the 2-hour SLA.",
         "taskDate": "2025-08-19",
@@ -122,6 +141,7 @@ const employees = [
         "failedTask": true
       },
       {
+        "taskNumber": 5,
         "title": "API Contract Doc",
         "description": "Write Swagger docs for v2 endpoints.",
         "taskDate": "2025-08-24",
@@ -132,6 +152,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 6,
         "title": "Pair Programming",
         "description": "Work with junior dev on unit testing patterns.",
         "taskDate": "2025-08-27",
@@ -142,6 +163,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 7,
         "title": "Sprint Planning",
         "description": "Estimate tickets and define acceptance criteria.",
         "taskDate": "2025-08-26",
@@ -151,14 +173,22 @@ const employees = [
         "completedTask": true,
         "failedTask": false
       }
-    ]
+    ],
+    "taskCounts": {
+      "active": 2,
+      "new": 2,
+      "completed": 3,
+      "failed": 1
+    }
   },
   {
     "id": 3,
+    "firstName": "Kabir",
     "email": "employee3@example.com",
     "password": "123",
     "tasks": [
       {
+        "taskNumber": 1,
         "title": "Dashboard Wireframes",
         "description": "Low-fidelity wireframes for analytics dashboard.",
         "taskDate": "2025-08-26",
@@ -169,6 +199,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 2,
         "title": "Color System Audit",
         "description": "Review palette accessibility (AA/AAA) and document.",
         "taskDate": "2025-08-22",
@@ -179,6 +210,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 3,
         "title": "Stakeholder Review",
         "description": "Walkthrough of dashboard concepts with PMs.",
         "taskDate": "2025-08-27",
@@ -189,6 +221,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 4,
         "title": "Prototype in Figma",
         "description": "Clickable prototype with realistic transitions.",
         "taskDate": "2025-08-29",
@@ -199,6 +232,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 5,
         "title": "Missed Asset Handoff",
         "description": "Icons were not delivered to dev by due date.",
         "taskDate": "2025-08-18",
@@ -209,6 +243,7 @@ const employees = [
         "failedTask": true
       },
       {
+        "taskNumber": 6,
         "title": "Design Tokens Export",
         "description": "Export tokens JSON for engineering integration.",
         "taskDate": "2025-08-24",
@@ -218,14 +253,22 @@ const employees = [
         "completedTask": true,
         "failedTask": false
       }
-    ]
+    ],
+    "taskCounts": {
+      "active": 2,
+      "new": 2,
+      "completed": 2,
+      "failed": 1
+    }
   },
   {
     "id": 4,
+    "firstName": "Rohan",
     "email": "employee4@example.com",
     "password": "123",
     "tasks": [
       {
+        "taskNumber": 1,
         "title": "Nightly DB Backup",
         "description": "Verify snapshot integrity and retention policy.",
         "taskDate": "2025-08-21",
@@ -236,6 +279,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 2,
         "title": "Optimize Slow Queries",
         "description": "Add indexes and rewrite N+1 heavy endpoints.",
         "taskDate": "2025-08-26",
@@ -246,6 +290,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 3,
         "title": "Incident Postmortem",
         "description": "Draft RCA for 08/18 outage and action items.",
         "taskDate": "2025-08-23",
@@ -256,6 +301,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 4,
         "title": "Patch Management",
         "description": "Apply security patches to staging and prod nodes.",
         "taskDate": "2025-08-28",
@@ -266,6 +312,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 5,
         "title": "SLA Breach",
         "description": "Resolution exceeded 30-minute P1 target.",
         "taskDate": "2025-08-18",
@@ -276,6 +323,7 @@ const employees = [
         "failedTask": true
       },
       {
+        "taskNumber": 6,
         "title": "Capacity Planning",
         "description": "Project CPU/memory needs for Q4 traffic.",
         "taskDate": "2025-08-25",
@@ -285,14 +333,22 @@ const employees = [
         "completedTask": true,
         "failedTask": false
       }
-    ]
+    ],
+    "taskCounts": {
+      "active": 2,
+      "new": 1,
+      "completed": 3,
+      "failed": 1
+    }
   },
   {
     "id": 5,
+    "firstName": "Vivaan",
     "email": "employee5@example.com",
     "password": "123",
     "tasks": [
       {
+        "taskNumber": 1,
         "title": "Launch Calendar",
         "description": "Draft campaign calendar for September product push.",
         "taskDate": "2025-08-27",
@@ -303,6 +359,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 2,
         "title": "Ad Performance Report",
         "description": "Summarize CPC/CTR across Google and Meta.",
         "taskDate": "2025-08-23",
@@ -313,6 +370,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 3,
         "title": "Newsletter Draft",
         "description": "Write August newsletter and collect approvals.",
         "taskDate": "2025-08-24",
@@ -323,6 +381,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 4,
         "title": "Community AMA",
         "description": "Host live Q&A with early adopters.",
         "taskDate": "2025-08-29",
@@ -333,6 +392,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 5,
         "title": "Missed Client Call",
         "description": "Did not attend scheduled sponsor sync.",
         "taskDate": "2025-08-17",
@@ -343,6 +403,7 @@ const employees = [
         "failedTask": true
       },
       {
+        "taskNumber": 6,
         "title": "SEO Audit",
         "description": "Run site crawl and fix critical issues.",
         "taskDate": "2025-08-26",
@@ -353,6 +414,7 @@ const employees = [
         "failedTask": false
       },
       {
+        "taskNumber": 7,
         "title": "Partner Brief",
         "description": "Create co-marketing brief for integration partner.",
         "taskDate": "2025-08-25",
@@ -362,9 +424,16 @@ const employees = [
         "completedTask": true,
         "failedTask": false
       }
-    ]
+    ],
+    "taskCounts": {
+      "active": 2,
+      "new": 2,
+      "completed": 3,
+      "failed": 1
+    }
   }
 ];
+
 
 const admin = [
   {
