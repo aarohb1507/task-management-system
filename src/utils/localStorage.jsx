@@ -12,7 +12,7 @@ const employees = [
         "taskDate": "2025-08-26",
         "category": "Finance",
         "activeTask": true,
-        "newTask": true,
+        "newTask": false,
         "completedTask": false,
         "failedTask": false
       },
@@ -85,7 +85,7 @@ const employees = [
     ],
     "taskCounts": {
       "active": 2,
-      "new": 2,
+      "new": 1,
       "completed": 3,
       "failed": 1
     }
@@ -103,7 +103,7 @@ const employees = [
         "taskDate": "2025-08-26",
         "category": "Development",
         "activeTask": true,
-        "newTask": true,
+        "newTask": false,
         "completedTask": false,
         "failedTask": false
       },
@@ -176,7 +176,7 @@ const employees = [
     ],
     "taskCounts": {
       "active": 2,
-      "new": 2,
+      "new": 1,
       "completed": 3,
       "failed": 1
     }
@@ -194,7 +194,7 @@ const employees = [
         "taskDate": "2025-08-26",
         "category": "Design",
         "activeTask": true,
-        "newTask": true,
+        "newTask": false,
         "completedTask": false,
         "failedTask": false
       },
@@ -256,179 +256,8 @@ const employees = [
     ],
     "taskCounts": {
       "active": 2,
-      "new": 2,
-      "completed": 2,
-      "failed": 1
-    }
-  },
-  {
-    "id": 4,
-    "firstName": "Rohan",
-    "email": "employee4@example.com",
-    "password": "123",
-    "tasks": [
-      {
-        "taskNumber": 1,
-        "title": "Nightly DB Backup",
-        "description": "Verify snapshot integrity and retention policy.",
-        "taskDate": "2025-08-21",
-        "category": "Ops",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": true,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 2,
-        "title": "Optimize Slow Queries",
-        "description": "Add indexes and rewrite N+1 heavy endpoints.",
-        "taskDate": "2025-08-26",
-        "category": "Database",
-        "activeTask": true,
-        "newTask": true,
-        "completedTask": false,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 3,
-        "title": "Incident Postmortem",
-        "description": "Draft RCA for 08/18 outage and action items.",
-        "taskDate": "2025-08-23",
-        "category": "Ops",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": true,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 4,
-        "title": "Patch Management",
-        "description": "Apply security patches to staging and prod nodes.",
-        "taskDate": "2025-08-28",
-        "category": "Security",
-        "activeTask": true,
-        "newTask": false,
-        "completedTask": false,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 5,
-        "title": "SLA Breach",
-        "description": "Resolution exceeded 30-minute P1 target.",
-        "taskDate": "2025-08-18",
-        "category": "Ops",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": false,
-        "failedTask": true
-      },
-      {
-        "taskNumber": 6,
-        "title": "Capacity Planning",
-        "description": "Project CPU/memory needs for Q4 traffic.",
-        "taskDate": "2025-08-25",
-        "category": "Ops",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": true,
-        "failedTask": false
-      }
-    ],
-    "taskCounts": {
-      "active": 2,
       "new": 1,
-      "completed": 3,
-      "failed": 1
-    }
-  },
-  {
-    "id": 5,
-    "firstName": "Vivaan",
-    "email": "employee5@example.com",
-    "password": "123",
-    "tasks": [
-      {
-        "taskNumber": 1,
-        "title": "Launch Calendar",
-        "description": "Draft campaign calendar for September product push.",
-        "taskDate": "2025-08-27",
-        "category": "Marketing",
-        "activeTask": false,
-        "newTask": true,
-        "completedTask": false,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 2,
-        "title": "Ad Performance Report",
-        "description": "Summarize CPC/CTR across Google and Meta.",
-        "taskDate": "2025-08-23",
-        "category": "Marketing",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": true,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 3,
-        "title": "Newsletter Draft",
-        "description": "Write August newsletter and collect approvals.",
-        "taskDate": "2025-08-24",
-        "category": "Content",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": true,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 4,
-        "title": "Community AMA",
-        "description": "Host live Q&A with early adopters.",
-        "taskDate": "2025-08-29",
-        "category": "Community",
-        "activeTask": true,
-        "newTask": false,
-        "completedTask": false,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 5,
-        "title": "Missed Client Call",
-        "description": "Did not attend scheduled sponsor sync.",
-        "taskDate": "2025-08-17",
-        "category": "Admin",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": false,
-        "failedTask": true
-      },
-      {
-        "taskNumber": 6,
-        "title": "SEO Audit",
-        "description": "Run site crawl and fix critical issues.",
-        "taskDate": "2025-08-26",
-        "category": "Marketing",
-        "activeTask": true,
-        "newTask": true,
-        "completedTask": false,
-        "failedTask": false
-      },
-      {
-        "taskNumber": 7,
-        "title": "Partner Brief",
-        "description": "Create co-marketing brief for integration partner.",
-        "taskDate": "2025-08-25",
-        "category": "Partnerships",
-        "activeTask": false,
-        "newTask": false,
-        "completedTask": true,
-        "failedTask": false
-      }
-    ],
-    "taskCounts": {
-      "active": 2,
-      "new": 2,
-      "completed": 3,
+      "completed": 2,
       "failed": 1
     }
   }
@@ -456,3 +285,4 @@ export const getLocalStorage = () => {
   
   return{employees, admin}
 }
+

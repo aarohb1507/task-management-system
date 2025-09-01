@@ -10,7 +10,7 @@ const TaskListNumbers = ({data}) => {
 
       <div className='bg-blue-400 w-[45%] rounded-xl px-9 py-6'>
         <h2 className='font-medium text-3xl'>{data.taskCounts.active}</h2>
-        <h3 className='font-semibold text-xl'>Active Task</h3>
+        <h3 className='font-semibold text-xl'>Accepted Task</h3>
       </div>
 
       <div className='bg-green-400 w-[45%] rounded-xl px-9 py-6'>
