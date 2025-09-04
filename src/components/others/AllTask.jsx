@@ -16,11 +16,11 @@ const AllTask = () => {
       <div className='overflow-auto h-[80%]'>
         {authData.employees.map((elem, idx) => (
           <div key={idx} className='bg-[#2c2c2c] py-2 px-4 rounded flex justify-between mb-2 pl-17'>
-            <h2 className='w-1/5 font-medium text-lg text-white'>{elem.firstName}</h2>
-            <h3 className='w-1/5 font-medium text-lg text-blue-500'>{elem.taskCounts.new}</h3>
-            <h5 className='w-1/5 font-medium text-lg text-yellow-500'>{elem.taskCounts.active}</h5>
-            <h5 className='w-1/5 font-medium text-lg text-green-500 pl-3'>{elem.taskCounts.completed}</h5>
-            <h5 className='w-1/5 font-medium text-lg text-red-500 pl-4'>{elem.taskCounts.failed}</h5>
+            <h2 className='w-1/5 font-medium text-white'>{elem.firstName}</h2>
+            <h3 className='w-1/5 font-medium text-blue-500'>{elem.taskCounts.new}</h3>
+            <h5 className='w-1/5 font-medium text-yellow-500'>{elem.taskCounts.active}</h5>
+            <h5 className='w-1/5 font-medium text-green-500 pl-3'>{elem.taskCounts.completed}</h5>
+            <h5 className='w-1/5 font-medium text-red-500 pl-4'>{elem.taskCounts.failed}</h5>
           </div>
         ))}
       </div>

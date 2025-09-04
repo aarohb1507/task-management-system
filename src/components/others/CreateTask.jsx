@@ -1,21 +1,35 @@
 import React, { useState } from 'react'
+import { getLocalStorage } from '../../utils/localStorage'
 
 const CreateTask = () => {
   // State for form inputs
-  const [taskTitle, setTaskTitle] = useState('')
+  const [title, setTitle] = useState('')
   const [taskDate, setTaskDate] = useState('')
   const [assignTo, setAssignTo] = useState('')
   const [category, setCategory] = useState('')
   const [description, setDescription] = useState('')
 
-  const[task, setTask] = useState({})
+  const[newTask, setNewTask] = useState({})
 
   const submitHandler = (e) => {
     e.preventDefault()
-    setTask({taskTitle, category, taskDate, description, activeTask:false,newTask:true,failedTask:false, completedtask:false})
-    console.log(task)
+    setNewTask({title, category, taskDate, description, activeTask:false,newTask:true,failedTask:false, completedTask:false})
+    const data = JSON.parse(localStorage.getItem('employees'))
+    data.forEach(function(elem){
+      if(assignTo == elem.firstName){
+        elem.tasks.push(newTask)
+        elem.taskCounts.new = elem.taskCounts.new+1
+      }
+      
+    })
+    localStorage.setItem('employees', JSON.stringify(data))
 
-    setTaskTitle("")
+
+
+
+
+
+    setTitle("")
     setTaskDate("")
     setAssignTo("")
     setCategory("")
@@ -30,8 +44,8 @@ const CreateTask = () => {
             <div>
               <h3 className='text-sm text-gray-300 mb-0.5 mt-0.5'>Task Title</h3>
               <input 
-                value={taskTitle}
-                onChange={(e) => setTaskTitle(e.target.value)}
+                value={title}
+                onChange={(e) => setTitle(e.target.value)}
                 className='py-1 px-2 w-4/5 text-sm rounded outline-none bg-transparent border-[1px] border-gray-400 mb-4' 
                 type='text' 
                 placeholder='Make a UI design'

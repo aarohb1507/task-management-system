@@ -4,7 +4,7 @@ const Login = ({handleLogin}) => {
 
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
-
+ 
   const submitHandler = (e)=>{
     e.preventDefault();
     console.log("Email is: ", email);
@@ -21,7 +21,7 @@ const Login = ({handleLogin}) => {
           (e) => {
             submitHandler(e);
           }
-        } className='flex flex-col items-center justify-center'>
+        } className='flex flex-col items-center justify-center text-white'>
           <input 
           value={email}
           onChange={(e) => setEmail(e.target.value)}
