@@ -1,29 +1,29 @@
 import React, { createContext, useEffect, useState } from 'react'
 import { getLocalStorage, setLocalStorage } from '../utils/localStorage'
 
-export const AuthContext = createContext()
+export const AuthContext = createContext(null)
 
-const AuthProvider = ({children}) => {
-//  localStorage.clear()
-  const [userData, setUserData] = useState(null)
-  
-  useEffect(
-    ()=>{
-      const{employees} = getLocalStorage()
-      setUserData({employees})
-      setLocalStorage()
-    },[]
-  )
+const AuthProvider = ({ children }) => {
+  // keep employees in React state so components re-render when it changes
+  const [userData, setUserData] = useState({ employees: [] })
 
+  // helper to re-read employees from localStorage and update state
+  const refreshEmployees = () => {
+    const stored = getLocalStorage()
+    const employees = (stored && stored.employees) ? stored.employees : []
+    setUserData({ employees })
+  }
 
+  useEffect(() => {
+    // Seed localStorage (first-run) then load to state
+    
+    refreshEmployees()
+  }, [])
 
   return (
-    <div>
-      <AuthContext.Provider value={userData}>
-        {children}
-      </AuthContext.Provider>
-      
-    </div>
+    <AuthContext.Provider value={{ userData, setUserData, refreshEmployees }}>
+      {children}
+    </AuthContext.Provider>
   )
 }
 

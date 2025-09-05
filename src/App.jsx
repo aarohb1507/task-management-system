@@ -6,60 +6,70 @@ import { AuthContext } from './context/AuthProvider'
 
 const App = () => {
   const [user, setUser] = useState(null)
-  const [loggedInUserData, setloggedInUserData] = useState(null)  
-  const authData = useContext(AuthContext)
-  
-  // Load stored user data on mount and when authData changes
+  const [loggedInUserData, setLoggedInUserData] = useState(null)
 
+  // Consume the provider object correctly
+  const { userData } = useContext(AuthContext) || {}   // userData holds { employees: [...] }
 
+  // Load stored user data on mount and when employees change
   useEffect(() => {
     try {
       const loggedInUser = localStorage.getItem("loggedInUser")
-      // Only proceed if we have stored data and auth context is loaded
-      if (!loggedInUser || !authData?.employees) {
+      // Only proceed if we have stored data and provider has employees
+      if (!loggedInUser || !userData?.employees) {
         return
       }
-      
-      const userData = JSON.parse(loggedInUser)
-      setUser(userData.role)
-      
-      if (userData.role === 'employee') {
-        setloggedInUserData(userData.data)
+
+      const userDataFromStorage = JSON.parse(loggedInUser)
+      setUser(userDataFromStorage.role)
+
+      if (userDataFromStorage.role === 'employee') {
+        setLoggedInUserData(userDataFromStorage.data)
       }
     } catch (error) {
       console.error('Error loading stored user data:', error)
       localStorage.removeItem("loggedInUser")
     }
-  }, [authData?.employees])    // Only depend on employees array
+  }, [userData?.employees])    // re-run when employees change in provider
 
   const handleLogin = (email, password) => {
-    if(email === 'admin@example.com' && password === '123') {
+    // admin shortcut
+    if (email === 'admin@example.com' && password === '123') {
       setUser('admin')
-      localStorage.setItem('loggedInUser', JSON.stringify({role: 'admin'}))
-    } else if(authData?.employees) {
-      const employee = authData.employees.find(
-        (e) => e.email === email && e.password === password
-      )
-      if(employee) {
-        setUser('employee')
-        setloggedInUserData(employee)
-        localStorage.setItem('loggedInUser', JSON.stringify({
-          role: 'employee', 
-          data: employee
-        }))
-      } else {
-        alert("Invalid credentials")
-      }
-    } else {
+      localStorage.setItem('loggedInUser', JSON.stringify({ role: 'admin' }))
+      return
+    }
+
+    // make sure provider's employees are present
+    const employees = userData?.employees || []
+
+    if (employees.length === 0) {
+      // provider hasn't loaded employees yet
       alert("Authentication system not ready")
+      return
+    }
+
+    const employee = employees.find(
+      (e) => e.email === email && e.password === password
+    )
+
+    if (employee) {
+      setUser('employee')
+      setLoggedInUserData(employee)
+      localStorage.setItem('loggedInUser', JSON.stringify({
+        role: 'employee',
+        data: employee
+      }))
+    } else {
+      alert("Invalid credentials")
     }
   }
 
   return (
     <>
       {!user && <Login handleLogin={handleLogin} />}
-      {user === 'admin' && <AdminDashboard changeUser = {setUser} />}
-      {user === 'employee' && <EmployeeDashboard data={loggedInUserData} changeUser = {setUser} />}
+      {user === 'admin' && <AdminDashboard changeUser={setUser} />}
+      {user === 'employee' && <EmployeeDashboard data={loggedInUserData} changeUser={setUser} />}
     </>
   )
 }
