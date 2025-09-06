@@ -16,7 +16,7 @@ const AuthProvider = ({ children }) => {
 
   useEffect(() => {
     // Seed localStorage (first-run) then load to state
-    
+    setLocalStorage()
     refreshEmployees()
   }, [])
 
